@@ -2,4 +2,6 @@
 {
     public int Id { get; set; }
     public int Id_game { get; set; }
+
+    public Picture() { }
 }

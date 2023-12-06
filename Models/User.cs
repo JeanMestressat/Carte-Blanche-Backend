@@ -5,4 +5,6 @@
     public string Last_Name { get; set; }
     public int Age { get; set; }
     public string Profil_Picture { get; set; }
+
+    public User() { }
 }

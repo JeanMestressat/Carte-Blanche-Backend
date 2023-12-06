@@ -3,13 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 [ApiController]
 [Route("api/user")]
-public class TodoController : ControllerBase
+public class UserController : ControllerBase
 {
     private readonly ApiContext _context;
-    public TodoController(ApiContext context)
+    public UserController(ApiContext context)
     {
         _context = context;
     }
+
     // GET: api/user
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
