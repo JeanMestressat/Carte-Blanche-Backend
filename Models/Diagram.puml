@@ -1,19 +1,53 @@
 @startuml CarteBlanche
 
-class Todo
+class Comments
 {
     Id : Integer
-    Task : String
-    Completed : Bool
-    Deadline : DateTime 
+    Id_Game : Integer
+    Id_User : Integer
+    Text : String
 }
 
-class ListTodo
+class Fav
 {
-    Name : String
-    Liste : List<Todo>
+    Id : Integer
+    Id_User : Integer
+    Id_Game : Integer
 }
 
-ListTodo "1" --> "1*" Todo
+class Game 
+{
+    Id : Integer
+    Name : String
+    Nb_Players : Integer
+    Duration : Integer
+    Rules : String
+    Video : String
+    Like : Integer
+    Id_User : Integer
+}
+
+Game "n" --> "1"Comments
+Game "n" --> "1" Picture
+
+class Picture 
+{
+    Id : Integer
+    Id_Game : Integer
+    Picture : String
+}
+
+class User 
+{
+    Id : Integer
+    Name : String
+    Last_Name : String
+    Age : Integer
+    Profil_Picture : String 
+}
+
+User "n" --> "1"Comments
+User "n" --> "n"Fav
+
 
 @enduml
