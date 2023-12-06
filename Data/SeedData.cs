@@ -4,13 +4,14 @@ public class SeedData
     {
         using (var context = new ApiContext())
         {
-            //Ajout des 3 Todos initiaux
-            // Todo Tache1 = new Todo()
-            // {
-            //     Task = "Faire la vaisselle",
-            //     Completed = false,
-            //     Deadline = DateTime.Parse("2023-11-10"),
-            // };
+            Ajout d'un User 
+            User user1 = new User()
+            {
+                Name = "Jungkook",
+                Last_Name = "Jeon",
+                Age = 26,
+                Profil_Picture = "lol.png"
+            };
             // Todo Tache2 = new Todo()
             // {
             //     Task = "Faire à manger",
