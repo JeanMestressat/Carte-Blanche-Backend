@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jano/Desktop/CarteBlanche/BackEnd/API/API.csproj": {}
+    "/Users/jano/Desktop/Carte-Blanche-Backend/API.csproj": {}
   },
   "projects": {
-    "/Users/jano/Desktop/CarteBlanche/BackEnd/API/API.csproj": {
+    "/Users/jano/Desktop/Carte-Blanche-Backend/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jano/Desktop/CarteBlanche/BackEnd/API/API.csproj",
+        "projectUniqueName": "/Users/jano/Desktop/Carte-Blanche-Backend/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/jano/Desktop/CarteBlanche/BackEnd/API/API.csproj",
+        "projectPath": "/Users/jano/Desktop/Carte-Blanche-Backend/API.csproj",
         "packagesPath": "/Users/jano/.nuget/packages/",
-        "outputPath": "/Users/jano/Desktop/CarteBlanche/BackEnd/API/obj/",
+        "outputPath": "/Users/jano/Desktop/Carte-Blanche-Backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jano/.nuget/NuGet/NuGet.Config"

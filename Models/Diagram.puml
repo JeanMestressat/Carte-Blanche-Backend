@@ -1,0 +1,19 @@
+@startuml CarteBlanche
+
+class Todo
+{
+    Id : Integer
+    Task : String
+    Completed : Bool
+    Deadline : DateTime 
+}
+
+class ListTodo
+{
+    Name : String
+    Liste : List<Todo>
+}
+
+ListTodo "1" --> "1*" Todo
+
+@enduml

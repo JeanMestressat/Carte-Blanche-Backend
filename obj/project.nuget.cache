@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gGp7Me2dlgo3LIlSbrtkklJSRenkvI/RjrYE6AuCtOZTN79OSUkYki2sbokWdBjfxG9qjSitrlyaU+ErFGGKSg==",
+  "dgSpecHash": "XSUbGgI8ewC2+1egyTVoO9ppgiIOYAPW1mJrTAaNERi88Q/ELuzfdeDoHu8syndc3cvc2PxqNYnHe/AjBmmLSQ==",
   "success": true,
-  "projectFilePath": "/Users/jano/Desktop/CarteBlanche/BackEnd/API/API.csproj",
+  "projectFilePath": "/Users/jano/Desktop/Carte-Blanche-Backend/API.csproj",
   "expectedPackageFiles": [
     "/Users/jano/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/jano/.nuget/packages/microsoft.aspnetcore.openapi/7.0.11/microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
