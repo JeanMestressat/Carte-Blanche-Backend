@@ -23,10 +23,21 @@ public class FavController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Fav>> Getfav(int id)
     {
-        var fav = await _context.Favs.SingleOrDefaultAsync(g => g.Id == id);
+        var fav = await _context.Favs.SingleOrDefaultAsync(f => f.Id == id);
         if (fav == null)
             return NotFound();
         return fav;
+    }
+
+    // GET: api/fav/user/1
+    [HttpGet("user/{id}")]
+    public async Task<ActionResult<IEnumerable<Fav>>> GetfavGame(int id)
+    {
+        var favs = await _context.Favs.Where(f => f.Id_Game == id).ToListAsync();
+        if (favs == null || !favs.Any())
+            return NotFound();
+
+        return favs;
     }
 
     // POST: api/fav
@@ -51,7 +62,7 @@ public class FavController : ControllerBase
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!_context.Favs.Any(u => u.Id == id))
+            if (!_context.Favs.Any(f => f.Id == id))
                 return NotFound();
             else
                 throw;

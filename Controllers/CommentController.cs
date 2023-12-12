@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 [ApiController]
 [Route("api/comment")]
@@ -23,10 +24,21 @@ public class CommentController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Comment>> Getcomment(int id)
     {
-        var comment = await _context.Comments.SingleOrDefaultAsync(g => g.Id == id);
+        var comment = await _context.Comments.SingleOrDefaultAsync(c => c.Id == id);
         if (comment == null)
             return NotFound();
         return comment;
+    }
+
+    // GET: api/comment/game/1
+    [HttpGet("game/{id}")]
+    public async Task<ActionResult<IEnumerable<Comment>>> GetcommentGame(int id)
+    {
+        var comments = await _context.Comments.Where(c => c.Id_Game == id).ToListAsync();
+        if (comments == null || !comments.Any())
+            return NotFound();
+
+        return comments;
     }
 
     // POST: api/comment
@@ -51,7 +63,7 @@ public class CommentController : ControllerBase
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!_context.Comments.Any(u => u.Id == id))
+            if (!_context.Comments.Any(c => c.Id == id))
                 return NotFound();
             else
                 throw;

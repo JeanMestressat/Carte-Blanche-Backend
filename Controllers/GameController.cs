@@ -51,7 +51,7 @@ public class GameController : ControllerBase
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!_context.Games.Any(u => u.Id == id))
+            if (!_context.Games.Any(g => g.Id == id))
                 return NotFound();
             else
                 throw;

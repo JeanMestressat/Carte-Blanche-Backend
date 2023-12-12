@@ -23,10 +23,21 @@ public class PictureController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Picture>> Getpicture(int id)
     {
-        var picture = await _context.Pictures.SingleOrDefaultAsync(g => g.Id == id);
+        var picture = await _context.Pictures.SingleOrDefaultAsync(p => p.Id == id);
         if (picture == null)
             return NotFound();
         return picture;
+    }
+
+    // GET: api/picture/game/1
+    [HttpGet("game/{id}")]
+    public async Task<ActionResult<IEnumerable<Picture>>> GetpictureGame(int id)
+    {
+        var pictures = await _context.Pictures.Where(p => p.Id_Game == id).ToListAsync();
+        if (pictures == null || !pictures.Any())
+            return NotFound();
+
+        return pictures;
     }
 
     // POST: api/picture
@@ -51,7 +62,7 @@ public class PictureController : ControllerBase
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!_context.Pictures.Any(u => u.Id == id))
+            if (!_context.Pictures.Any(p => p.Id == id))
                 return NotFound();
             else
                 throw;
