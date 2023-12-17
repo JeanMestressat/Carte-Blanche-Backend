@@ -4,7 +4,7 @@ public class Game
     public string Name { get; set; }
     public int Nb_Players { get; set; }
     public int Duration { get; set; }
-    public Material material { get; set; }
+    public string material { get; set; }
     public string Rules { get; set; }
     public string Video { get; set; }
     public int Like { get; set; }
